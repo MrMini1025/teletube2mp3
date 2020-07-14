@@ -44,5 +44,6 @@ You'll see
 ### Usage
 In your Telegram message box. Text
 
-`yt URL
-
+```
+yt "URL OF VIDEO"
+```
