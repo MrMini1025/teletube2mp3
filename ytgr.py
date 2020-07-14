@@ -62,6 +62,11 @@ def handle(msg):
                 ydl.download([link])
                 newfilename = title+".mp3"
                 os.rename(filename, newfilename)
+                try:
+                        f = open(newfilename)
+                        f.close()
+                except IOError:
+                        bot.sendMessage(chat_id,"Error"+"\n"+"unexpected error occurred 😢")
                 bot.sendAudio(chat_id,audio=open(newfilename,'rb'))
                 print("Sent!"+"\n"+title)
                 os.remove(newfilename)
