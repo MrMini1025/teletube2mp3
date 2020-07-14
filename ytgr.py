@@ -33,7 +33,10 @@ def handle(msg):
             title = titlen[2:-2]
             print(title)
             print(watchid)
-            bot.sendMessage(chat_id,title+"\n"+"Downloading...")
+            if param[:32] == "https://www.youtube.com/watch?v=":
+                bot.sendMessage(chat_id,title+"\n"+"Downloading...")
+            else:
+                bot.sendMessage(chat_id,"Error 404"+"\n"+"It's not youtube link 😢")
             print(param)
             options = {
                 'format': 'bestaudio/best',
